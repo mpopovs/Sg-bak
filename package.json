@@ -17,6 +17,7 @@
     "@iconify/svelte": "^2.2.1",
     "@playwright/test": "^1.21.0",
     "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-node": "*",
     "@sveltejs/kit": "next",
     "carbon-components-svelte": "^0.63.8",
     "carbon-icons-svelte": "^11.0.1",
