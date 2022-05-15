@@ -6,6 +6,7 @@
       Grid,
       Row,
       Column,
+      Tile,
 ImageLoader,
       
     } from "carbon-components-svelte";
@@ -34,15 +35,18 @@ import SearchArt from '../components/SearchArt.svelte';
 -->
 <Content>
     <Grid>
-      <Row>
-        <Column>
+        
+        <Row>
+            <Column>
           <h1>Find Artworks</h1>
+          <Tile>
         <SearchArt/>
         <ImageLoader
             src="https://cdn.glitch.global/89f42e75-f6d4-4696-9efe-aa8d1cdb61e8/fo4o.jpg?v=1652294284989"
             alt="attels"
           />
-        </Column>
-      </Row>
+        </Tile>
+    </Column>
+    </Row>
     </Grid>
   </Content>

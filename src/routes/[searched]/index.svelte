@@ -1,15 +1,20 @@
 <script>
     
     import {page} from '$app/stores';
-    import { ImageLoader, Button } from "carbon-components-svelte";
-    import {onMount} from "svelte";
+    import { ImageLoader, 
+      Button,
+       Tile,
+       Grid, 
+       Row,
+      Column } from "carbon-components-svelte";
+    import {afterUpdate} from "svelte";
 
     /**
 * @type {any[]}
 */
     let artWorks = [];
 
-    onMount(async () => {
+    afterUpdate(async () => {
         var searched = $page.params.searched;
         const sketchfabArt =await fetch (`https://api.sketchfab.com/v3/search?type=models&q=${searched}&user=sferagallery&archives_flavours=false`)
         var res = await sketchfabArt.json();
@@ -19,22 +24,23 @@
     </script>
     
     <section>
-        <div>
-    {$page.params.searched}
-        </div>
-        <div>
+        
+        <div><Grid>
             {#each artWorks as artWork}
-          
-            
+          <Row>
+            <Column>
+            <Tile>
             <ImageLoader
             src="{artWork.thumbnails.images[0].url}"
             alt="{artWork.name}"
           />
             <h2>{artWork.name}</h2>
-            
-            <div class=" ">
-                <a  href="#{artWork.uid}"><Button>3D / AR</Button></a>
-              </div>
+            <a  href="#{artWork.uid}"><Button>3D / AR</Button></a>
+          </Tile>
+        </Column>
+        </Row>
+                
+              
               
               <div id="{artWork.uid}" class="overlay">
                 <div class="popup">
@@ -48,7 +54,7 @@
                     width="100%"
                     height="500px"
                      
-                      allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" 
+                      allowfullscreen mozAllowFullScreen="true" webkitallowfullscreen="true" 
                       allow="autoplay; fullscreen; xr-spatial-tracking" 
                       xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
                       src="https://sketchfab.com/models/{artWork.uid}/embed?ui_infos=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_settings=0&ui_vr=0&ui_annotations=0"> 
@@ -63,6 +69,7 @@
               </div>
 
             {/each}
+          </Grid>
             </div>
     </section>
 
@@ -98,7 +105,7 @@
           margin: 70px auto;
           padding: 20px;
           background: #fff;
-          border-radius: 5px;
+          border-radius: none;
           width: 30%;
           position: relative;
           transition: all 5s ease-in-out;
@@ -120,7 +127,7 @@
           color: #333;
         }
         .popup .close:hover {
-          color: #06D85F;
+          color: #0f62fe;
         }
         .popup .content {
           max-height: 70%;
@@ -130,7 +137,7 @@
         @media screen and (max-width: 700px){
          
           .popup{
-            width: 70%;
+            width: 100%;
           }
         }
            

@@ -16,6 +16,7 @@ import {
       
     } from "carbon-components-svelte";
 
+
     let isSideNavOpen = false;
     let theme = "g90";
    
@@ -25,7 +26,7 @@ import {
     <svelte:fragment slot="skip-to-content">
       <SkipToContent />
     </svelte:fragment>
-   
+    
   </Header>
 
   <SideNav 
@@ -70,4 +71,5 @@ import {
      .toogle{
        margin-left: 1em;
      }
+     :global(.bx--side-nav~.bx--content){margin-left: 0rem;}
    </style>
