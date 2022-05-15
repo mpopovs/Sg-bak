@@ -6,15 +6,18 @@
        Tile,
        Grid, 
        Row,
-      Column } from "carbon-components-svelte";
-    import {afterUpdate} from "svelte";
+      Column,
+      Tag, 
+Content} from "carbon-components-svelte";
+    import { onMount} from "svelte";
+
 
     /**
 * @type {any[]}
 */
     let artWorks = [];
 
-    afterUpdate(async () => {
+    onMount(async () => {
         var searched = $page.params.searched;
         const sketchfabArt =await fetch (`https://api.sketchfab.com/v3/search?type=models&q=${searched}&user=sferagallery&archives_flavours=false`)
         var res = await sketchfabArt.json();
@@ -25,64 +28,80 @@
     
     <section>
         
-        <div><Grid>
+        <div><Grid padding>
+          
             {#each artWorks as artWork}
-          <Row>
+            <Row>
             <Column>
             <Tile>
             <ImageLoader
             src="{artWork.thumbnails.images[0].url}"
             alt="{artWork.name}"
           />
-            <h2>{artWork.name}</h2>
-            <a  href="#{artWork.uid}"><Button>3D / AR</Button></a>
+          {#each artWork.tags as tag}
+            
+         
+          <Tag type='outline'> {tag.name}</Tag>
+          {/each}
+            <h4>{artWork.name}</h4>
+            <div class="button"><a  href="#{artWork.uid}"><Button>3D / AR</Button></a>
+            </div>
           </Tile>
-        </Column>
-        </Row>
+       
                 
               
               
               <div id="{artWork.uid}" class="overlay">
                 <div class="popup">
-                  <h2>{artWork.name}</h2>
-                  <a class="close" href="#{artWork.uid+1}">&times;</a>
+                  <Content>
                   
+                  <h2>{artWork.name}</h2>
+               
+                  
+                  <a class="close" href="#{artWork.uid+1}">&times;</a>
+                
+                </Content>
                     <div class="sketchfab-embed-wrapper, content"> 
                       <iframe 
                       title="{artWork.name}" 
                       frameborder="0" 
-                    width="100%"
-                    height="500px"
-                     
+                      width="100%"
+                      height="500px"
                       allowfullscreen mozAllowFullScreen="true" webkitallowfullscreen="true" 
                       allow="autoplay; fullscreen; xr-spatial-tracking" 
                       xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
-                      src="https://sketchfab.com/models/{artWork.uid}/embed?ui_infos=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_settings=0&ui_vr=0&ui_annotations=0"> 
-                    </iframe> 
-                   
-                  </div>
-                  <p class="descript">
+                      src="https://sketchfab.com/models/{artWork.uid}/embed?ui_infos=0&ui_inspector=0&ui_watermark_link=0&ui_stop=0&ui_watermark=0&ui_settings=0&ui_vr=0&ui_annotations=0"> 
+                      </iframe> 
+                    </div>
+                    
+                    <p class="descript">
                     {@html artWork.description}
-                  </p>
-                  
-                </div>
-              </div>
-
+                    </p>
+                    
+                     
+                 </div>
+                </Column>
+              </Row>
             {/each}
+          
           </Grid>
             </div>
     </section>
 
     <style> 
+    .button{
+      float: right;
+    }
         a {
           text-decoration: none;
         }
         .descript{
           color: #333;
+          padding-top: 1em;
         }
         .overlay {
           position: fixed;
-          top: 0;
+          top: 30px;
           bottom: 0;
           left: 0;
           right: 0;
@@ -96,19 +115,18 @@
           visibility: visible;
           opacity: 1;
         }
-        .overlay:target {
-          visibility: visible;
-          opacity: 1;
-        }
+  
         
         .popup {
-          margin: 70px auto;
-          padding: 20px;
+          margin: 20px auto;
+          padding: 10px;
           background: #fff;
-          border-radius: none;
-          width: 30%;
+          border-radius: 0px;
+          width: 800px;
+          
           position: relative;
-          transition: all 5s ease-in-out;
+          transition: all 0.7s ease-in-out;
+         
         }
         
         .popup h2 {
@@ -130,14 +148,17 @@
           color: #0f62fe;
         }
         .popup .content {
-          max-height: 70%;
-          overflow: auto;
+          
+          max-height: 900px;
+          
         }
         
-        @media screen and (max-width: 700px){
+        @media screen and (max-width: 800px){
          
           .popup{
+            
             width: 100%;
+            height: 100%;
           }
         }
            

@@ -33,20 +33,24 @@ import SearchArt from '../components/SearchArt.svelte';
     
 ​</SC.Canvas>
 -->
-<Content>
-    <Grid>
+
+    <Grid
+    noGutter='true'
+    >
         
         <Row>
-            <Column>
+            <Column sm={{ span: 4, offset: 0 }} 
+            noGutter='true'
+            >
           <h1>Find Artworks</h1>
-          <Tile>
+          
         <SearchArt/>
         <ImageLoader
             src="https://cdn.glitch.global/89f42e75-f6d4-4696-9efe-aa8d1cdb61e8/fo4o.jpg?v=1652294284989"
             alt="attels"
           />
-        </Tile>
+        
     </Column>
     </Row>
     </Grid>
-  </Content>
+ 

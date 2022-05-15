@@ -12,6 +12,9 @@ import {
       SideNavDivider,
       SkipToContent,
       Content,
+      Grid,
+      Row,
+      Column,
      
       
     } from "carbon-components-svelte";
@@ -26,7 +29,23 @@ import {
     <svelte:fragment slot="skip-to-content">
       <SkipToContent />
     </svelte:fragment>
-    
+
+    <div class="toogle">
+     
+      <Theme 
+        bind:theme
+      
+        render="toggle"
+        toggle={{
+        themes: ["g90", "g10"],
+        labelA: "Dark mode",
+        labelB: "Light mode",
+        hideLabel: true,
+        size: "md",
+      }}
+    />
+    </div>
+  
   </Header>
 
   <SideNav 
@@ -43,19 +62,7 @@ import {
       </SideNavMenu>
       <SideNavDivider />
       <SideNavLink text="Contacts" href="/contacts"/>
-      <div class="toogle">
-        <Theme 
-        bind:theme persist persistKey="__carbon-theme"
-          render="toggle"
-          toggle={{
-          themes: ["g90", "g10"],
-          labelA: "Dark mode",
-          labelB: "Light mode",
-          hideLabel: true,
-          size: "md",
-        }}
-      />
-      </div>
+      
       
      
     </SideNavItems>
@@ -69,7 +76,11 @@ import {
     
    <style>
      .toogle{
-       margin-left: 1em;
+       position: fixed;
+       top:0 px;
+       right: 95px;
+      
+       padding-bottom: 15px;
      }
      :global(.bx--side-nav~.bx--content){margin-left: 0rem;}
    </style>
