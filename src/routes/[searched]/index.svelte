@@ -114,25 +114,14 @@ Content} from "carbon-components-svelte";
   background-color: #393939;
 }
 
-.card-bottom{
-  position: relative;
-  margin-top: 3rem;
-  width: 100%;
-  
-  background-color: #393939;
-}
+
 .button{
   
   
   
     }
 
-    .tag{
-      position: absolute;
-      width: 70%;
-  bottom: 0px;
-  left: 0;
-    }
+  
         a {
           text-decoration: none;
         }
