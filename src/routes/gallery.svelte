@@ -22,7 +22,7 @@ onMount(async () => {
       });
     });
    
-    let open = false;
+    
     
 </script>
 <main>
