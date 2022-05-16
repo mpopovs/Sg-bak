@@ -27,27 +27,42 @@ Content} from "carbon-components-svelte";
     </script>
     
     <section>
-        
-        <div><Grid padding>
+      <Grid 
+      noGutter='true'
+      padding='true'
+      >
+      <Row
+      noGutter='true'
+      
+      >
           
             {#each artWorks as artWork}
-            <Row>
-            <Column>
-            <Tile>
+           
+            <Column
+            noGutter='true'
+            sm={8} md={8} lg={8}
+            >
+            <div class='card'>
+             <Tile><h4>{artWork.name}</h4></Tile> 
             <ImageLoader
             src="{artWork.thumbnails.images[0].url}"
             alt="{artWork.name}"
           />
+            <Tile>
+            <div class="">
           {#each artWork.tags as tag}
             
          
-          <Tag type='outline'> {tag.name}</Tag>
+          <Tag size="sm" type='outline'> {tag.name}</Tag>
           {/each}
-            <h4>{artWork.name}</h4>
+        </div>
+            </Tile>
+            <Tile>
             <div class="button"><a  href="#{artWork.uid}"><Button>3D / AR</Button></a>
             </div>
           </Tile>
-       
+          </div>
+         
                 
               
               
@@ -60,7 +75,7 @@ Content} from "carbon-components-svelte";
                   
                   <a class="close" href="#{artWork.uid+1}">&times;</a>
                 
-                </Content>
+                     </Content>
                     <div class="sketchfab-embed-wrapper, content"> 
                       <iframe 
                       title="{artWork.name}" 
@@ -77,20 +92,46 @@ Content} from "carbon-components-svelte";
                     <p class="descript">
                     {@html artWork.description}
                     </p>
-                    
+                    </div>
                      
-                 </div>
-                </Column>
-              </Row>
+              </div>
+            </Column>
+            
             {/each}
-          
-          </Grid>
-            </div>
+          </Row>
+      </Grid>
+         
+           
     </section>
 
     <style> 
-    .button{
-      float: right;
+    
+.card{
+  position: relative;
+  width: 100%;
+  
+  border-left: 3px solid #8d8d8d ;
+  background-color: #393939;
+}
+
+.card-bottom{
+  position: relative;
+  margin-top: 3rem;
+  width: 100%;
+  
+  background-color: #393939;
+}
+.button{
+  
+  
+  
+    }
+
+    .tag{
+      position: absolute;
+      width: 70%;
+  bottom: 0px;
+  left: 0;
     }
         a {
           text-decoration: none;
@@ -123,7 +164,7 @@ Content} from "carbon-components-svelte";
           background: #fff;
           border-radius: 0px;
           width: 800px;
-          
+          left: 12%;
           position: relative;
           transition: all 0.7s ease-in-out;
          
@@ -152,14 +193,19 @@ Content} from "carbon-components-svelte";
           max-height: 900px;
           
         }
+      
+       
         
-        @media screen and (max-width: 800px){
+        @media screen and (max-width: 1056px){
          
+          .overlay{
+            left: 0;
+          }
           .popup{
-            
+            left: 0px;
             width: 100%;
             height: 100%;
           }
         }
-           
+        
             </style>

@@ -82,5 +82,7 @@ import {
       
        padding-bottom: 15px;
      }
-     :global(.bx--side-nav~.bx--content){margin-left: 0rem;}
+     :global(.bx--side-nav~.bx--content){margin-left: 0rem;
+    padding: 1rem;
+    }
    </style>
