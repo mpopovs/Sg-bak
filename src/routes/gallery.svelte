@@ -1,4 +1,4 @@
-<Content><h1>Gallery</h1></Content>
+<Content><h1>Gallery!</h1></Content>
 <script>
     import "carbon-components-svelte/css/g90.css";
     import { onMount } from "svelte";
