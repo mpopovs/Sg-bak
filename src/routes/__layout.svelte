@@ -56,6 +56,7 @@ import {
       <SideNavLink text="Gallery" href="/gallery" />
       <SideNavLink text="Artists" href="/artists"/>
       <SideNavLink text="Exibitions" href="/exibitions"/>
+      <SideNavLink text="About" href="/about"/>
       <SideNavMenu text="Service">
         <SideNavMenuItem href="/" text="Artwork scan" />
         <SideNavMenuItem href="/" text="Augmented exibition" />

@@ -167,7 +167,7 @@ Content} from "carbon-components-svelte";
           left: 12%;
           position: relative;
           transition: all 0.7s ease-in-out;
-         
+          overflow: scroll;
         }
         
         .popup h2 {

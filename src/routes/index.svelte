@@ -7,6 +7,7 @@
       Column,
       Tile,
 ImageLoader,
+InlineLoading,
       
     } from "carbon-components-svelte";
 import SearchArt from '../components/SearchArt.svelte';
@@ -22,19 +23,44 @@ import SearchArt from '../components/SearchArt.svelte';
             <Column 
             noGutter='true'
             >
-          <h1>Find Artworks</h1>
+          <Content><h1>Find Artworks</h1></Content>
           
         <SearchArt/>
         
-        <div class="sketchfab-embed-wrapper"> 
-            <iframe title="Lodes Atspulgs" frameborder="0" 
-            width="100%"
-                      height="600px"
-                      allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" 
-                      allow="autoplay; fullscreen; xr-spatial-tracking" 
-                      xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
-                      src="https://sketchfab.com/models/5bdca21846fc43dab771ce075405089c/embed?autospin=1&autostart=1&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0&ui_theme=dark&dnt=1"> </iframe> </div>
+        <ImageLoader
+  src="https://media.sketchfab.com/models/db152d54b6514ec3a981ea9fd877ac23/thumbnails/1e131d25f2154819b4de6abff6948092/2bb65402441c41e8b1156e6fff07ef1b.jpeg"
+>
+  <svelte:fragment slot="loading">
+    <InlineLoading />
+  </svelte:fragment>
+  <svelte:fragment slot="error">An error occurred.</svelte:fragment>
+</ImageLoader>
+        
+                   
+    
+ 
+            <ImageLoader
+            src="https://media.sketchfab.com/models/49cde16e02dd43ef8c902acb5000b50f/thumbnails/db71ce98d53a46bc9a0b995b2deac7f7/2318711c06db4c269e2c53212be3a66e.jpeg"
+          >
+            <svelte:fragment slot="loading">
+              <InlineLoading />
+            </svelte:fragment>
+            <svelte:fragment slot="error">An error occurred.</svelte:fragment>
+          </ImageLoader>
+       
+
+       
+            <ImageLoader
+            src="https://media.sketchfab.com/models/96d73f4ccbd547969a1e659ec9c0193c/thumbnails/5f3da2523b1446718b0ce457fb851b0c/02ff08169a284a5fabefcec31d00578d.jpeg"
+          >
+            <svelte:fragment slot="loading">
+              <InlineLoading />
+            </svelte:fragment>
+            <svelte:fragment slot="error">An error occurred.</svelte:fragment>
+          </ImageLoader>
+       
         </Column>
+                    
     </Row>
     </Grid>
  
