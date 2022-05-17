@@ -18,7 +18,7 @@
    
     <StructuredListBody>
       <StructuredListRow>
-        <StructuredListCell noWrap>IZGLĪTĪBA:</StructuredListCell>
+        <StructuredListCell >IZGLĪTĪBA:</StructuredListCell>
         
         <StructuredListCell>
             
@@ -39,7 +39,7 @@
         </StructuredListCell>
       </StructuredListRow>
       <StructuredListRow>
-        <StructuredListCell noWrap>DARBA PIEREDZE:</StructuredListCell>
+        <StructuredListCell >DARBA PIEREDZE:</StructuredListCell>
        
         <StructuredListCell>
             
@@ -79,7 +79,7 @@
         </StructuredListCell>
       </StructuredListRow>
       <StructuredListRow>
-        <StructuredListCell noWrap>RADOŠAIS DARBS:</StructuredListCell>
+        <StructuredListCell >RADOŠAIS DARBS:</StructuredListCell>
         
         <StructuredListCell>
             
@@ -97,7 +97,7 @@
       </StructuredListRow>
 
       <StructuredListRow>
-        <StructuredListCell noWrap>IZSTĀDES:</StructuredListCell>
+        <StructuredListCell >IZSTĀDES:</StructuredListCell>
         
         <StructuredListCell>
             
@@ -175,7 +175,7 @@
         </StructuredListCell>
       </StructuredListRow>
       <StructuredListRow>
-        <StructuredListCell noWrap>SIMPOZIJI UN REZIDENCES:</StructuredListCell>
+        <StructuredListCell >SIMPOZIJI UN REZIDENCES:</StructuredListCell>
         
         <StructuredListCell>
             
@@ -187,7 +187,7 @@
       </StructuredListRow>
 
       <StructuredListRow>
-        <StructuredListCell noWrap> DARBI KOLEKCIJĀS:</StructuredListCell>
+        <StructuredListCell > DARBI KOLEKCIJĀS:</StructuredListCell>
         
         <StructuredListCell>
            

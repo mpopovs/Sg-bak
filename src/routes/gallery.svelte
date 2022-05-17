@@ -1,11 +1,9 @@
 <Content><h1>Gallery</h1></Content>
 <script>
-    import "carbon-components-svelte/css/g90.css";
+    
     import { onMount } from "svelte";
     import {apiData, artWorks} from "../store";
-    import { Grid, Row, Column, Tile } from "carbon-components-svelte";
-    import { Button } from "carbon-components-svelte";
-    import { ImageLoader, Content, PaginationNav } from "carbon-components-svelte";
+    import { Grid, Row, Column, Button,ImageLoader, Content, PaginationNav } from "carbon-components-svelte";
   
     
 
@@ -99,20 +97,6 @@ src="{artWork.thumbnails.images[0].url}"
 </main>
 
 <style> 
- :global(.bx--side-nav~.bx--content){margin-left: 0rem;
-    padding: 1rem;
-    }
-   
-    .card{
-  position: relative;
-  width: 100%;
-  
-  border-left: 3px solid #8d8d8d ;
-  background-color: #393939;
-}
-
-
-
 
   
         a {

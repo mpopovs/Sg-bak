@@ -94,7 +94,7 @@ Tile,
      .toogle{
        position: fixed;
        top:0 px;
-       right: 95px;
+       right: 45px;
       
        padding-bottom: 15px;
      }
