@@ -17,7 +17,10 @@
   <Content>
     <h1>Contacts</h1>
   </Content>
-  <Grid padding><Row>
+  <Grid padding
+  >
+  <Row
+  >
     <Column>
     <TextInput labelText="First Name" placeholder="First Name..." required />
 </Column>
@@ -46,8 +49,14 @@
   </Row>
 <Row>
     <Column>
+      <div class="button">
     <Button>Send</Button>
+  </div>
     </Column>
 </Row>
 
 </Grid>
+
+<style>
+  
+</style>

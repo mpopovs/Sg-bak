@@ -15,6 +15,7 @@ import {
       Grid,
       Row,
       Column,
+Tile,
      
       
     } from "carbon-components-svelte";
@@ -38,10 +39,10 @@ import {
         render="toggle"
         toggle={{
         themes: ["g90", "g10"],
-        labelA: "Dark mode",
-        labelB: "Light mode",
-        hideLabel: true,
-        size: "md",
+        labelA: 'Dark',
+        labelB: 'Light',
+        
+        
       }}
     />
     </div>
@@ -55,7 +56,7 @@ import {
       <SideNavLink text="Home" href="/" />
       <SideNavLink text="Gallery" href="/gallery" />
       <SideNavLink text="Artists" href="/artists"/>
-      <SideNavLink text="Exibitions" href="/exibitions"/>
+      
       <SideNavLink text="About" href="/about"/>
       <SideNavMenu text="Service">
         <SideNavMenuItem href="/" text="Artwork scan" />
@@ -69,11 +70,25 @@ import {
     </SideNavItems>
   </SideNav>
   
+
   <Content>
-   
+    <Grid
+    
+    >
+      <Row
+      noGutter='true'
+      >
+        <Column
+        
+        >
           <slot/>
-   
+        </Column>
+      </Row>
+    </Grid>
   </Content>
+          
+        
+ 
     
    <style>
      .toogle{

@@ -1,6 +1,6 @@
 <script>
-import { Column, Content, Grid, Row, Tile } from "carbon-components-svelte";
-
+import { Column, Content, Grid, Row, Tile, Button } from "carbon-components-svelte";
+import {goto} from '$app/navigation';
 </script>
 <section>
 <div class="sketchfab-embed-wrapper"> 
@@ -29,6 +29,14 @@ import { Column, Content, Grid, Row, Tile } from "carbon-components-svelte";
     
     </Column>
 </Row>
+<Row padding>
+  <Column>
+    <div class="button">
+      <Button on:click={() => {goto('/contacts')}} size="field" kind="tertiary">Contacts Us</Button>
+    </div>
+    
+  </Column>
+</Row>
 </Grid>
 </section>
 
@@ -37,4 +45,5 @@ import { Column, Content, Grid, Row, Tile } from "carbon-components-svelte";
 
     padding-top: 2rem;
   }
+ 
 </style>

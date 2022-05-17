@@ -115,11 +115,7 @@ Content} from "carbon-components-svelte";
 }
 
 
-.button{
-  
-  
-  
-    }
+
 
   
         a {

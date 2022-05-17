@@ -1,9 +1,9 @@
-<Content><h1>Gallery!</h1></Content>
+<Content><h1>Gallery</h1></Content>
 <script>
     import "carbon-components-svelte/css/g90.css";
     import { onMount } from "svelte";
     import {apiData, artWorks} from "../store";
-    import { Grid, Row, Column } from "carbon-components-svelte";
+    import { Grid, Row, Column, Tile } from "carbon-components-svelte";
     import { Button } from "carbon-components-svelte";
     import { ImageLoader, Content, PaginationNav } from "carbon-components-svelte";
   
@@ -29,11 +29,17 @@ onMount(async () => {
        
         
     <div class="">
-      <Grid narrow padding>
-        <Row>
+      <Grid 
+      noGutter='true'
+      padding>
+        <Row
+        noGutter='true'
+        >
     {#each $artWorks as artWork}
    
-          <Column sm={8} md={8} lg={8}>
+          <Column 
+          noGutter='true'
+          sm={8} md={8} lg={8}>
 
     
 <ImageLoader
@@ -43,15 +49,16 @@ src="{artWork.thumbnails.images[0].url}"
              
 
               
-              <div class=" ">
+              <div class="button">
                 <a  href="#{artWork.uid}"><Button>3D / AR</Button></a>
               </div>
               
               <div id="{artWork.uid}" class="overlay">
                 <div class="popup">
+                  <Content>
                   <h2>{artWork.name}</h2>
                   <a class="close" href="#{artWork.uid+1}">&times;</a>
-                  
+                </Content>
                     <div class="sketchfab-embed-wrapper, content"> 
                       <iframe 
                       title="{artWork.name}" 
@@ -92,71 +99,95 @@ src="{artWork.thumbnails.images[0].url}"
 </main>
 
 <style> 
-a {
-text-decoration: none;
-}
-.descript{
-color: #333;
-}
-.overlay {
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background: rgba(0, 0, 0, 0.7);
-transition: opacity 500ms;
-visibility: hidden;
-opacity: 0;
-z-index: 1;
-}
-.overlay:target {
-visibility: visible;
-opacity: 1;
-}
-.overlay:target {
-visibility: visible;
-opacity: 1;
+ :global(.bx--side-nav~.bx--content){margin-left: 0rem;
+    padding: 1rem;
+    }
+   
+    .card{
+  position: relative;
+  width: 100%;
+  
+  border-left: 3px solid #8d8d8d ;
+  background-color: #393939;
 }
 
-.popup {
-margin: 70px auto;
-padding: 20px;
-background: #fff;
-border-radius: 5px;
-width: 30%;
-position: relative;
-transition: all 5s ease-in-out;
-}
 
-.popup h2 {
-margin-top: 0;
-color: #333;
-font-family: Tahoma, Arial, sans-serif;
-}
-.popup .close {
-position: absolute;
-top: 20px;
-right: 30px;
-transition: all 200ms;
-font-size: 30px;
-font-weight: bold;
-text-decoration: none;
-color: #333;
-}
-.popup .close:hover {
-color: #06D85F;
-}
-.popup .content {
-max-height: 70%;
-overflow: auto;
-}
 
-@media screen and (max-width: 700px){
 
-.popup{
-width: 70%;
-}
-}
-
+  
+        a {
+          text-decoration: none;
+        }
+        .descript{
+          color: #333;
+          padding-top: 1em;
+        }
+        .overlay {
+          position: fixed;
+          top: 30px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.7);
+          transition: opacity 500ms;
+          visibility: hidden;
+          opacity: 0;
+          z-index: 1;
+        }
+        .overlay:target {
+          visibility: visible;
+          opacity: 1;
+        }
+  
+        
+        .popup {
+          margin: 20px auto;
+          padding: 10px;
+          background: #fff;
+          border-radius: 0px;
+          width: 800px;
+          left: 12%;
+          position: relative;
+          transition: all 0.7s ease-in-out;
+          overflow: scroll;
+        }
+        
+        .popup h2 {
+          margin-top: 0;
+          color: #333;
+          font-family: Tahoma, Arial, sans-serif;
+        }
+        .popup .close {
+          position: absolute;
+          top: 20px;
+          right: 30px;
+          transition: all 200ms;
+          font-size: 30px;
+          font-weight: bold;
+          text-decoration: none;
+          color: #333;
+        }
+        .popup .close:hover {
+          color: #0f62fe;
+        }
+        .popup .content {
+          
+          max-height: 900px;
+          
+        }
+      
+       
+        
+        @media screen and (max-width: 1056px){
+         
+          .overlay{
+            left: 0;
+          }
+          .popup{
+            left: 0px;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        
 </style>
