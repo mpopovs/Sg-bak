@@ -6,7 +6,7 @@ import { Column, Content, Grid, Row, Tile } from "carbon-components-svelte";
 <div class="sketchfab-embed-wrapper"> 
   <iframe title="Lodes Atspulgs" frameborder="0" 
   width="100%"
-            height="400px"
+            height="350px"
              
             allow="autoplay;" 
             xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
