@@ -1,1 +1,43 @@
-<h1>Artists</h1>
+<script>
+    import {
+        Grid,
+        Row,
+        Column,
+        Tile,
+      FluidForm,
+      TextInput,
+      TextArea,
+      FormGroup,
+      Button,
+     Content,
+     ImageLoader
+    } from "carbon-components-svelte";
+  </script>
+  <Content>
+    <h1>Artists</h1>
+  </Content>
+  <Grid>
+      <Row>
+          <Column>
+            <Tile>
+            <ImageLoader
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+          />
+        </Tile>
+        </Column>
+          <Column>
+            <Tile>
+            <ImageLoader
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+          />
+        </Tile>
+        </Column>
+          <Column>
+            <Tile>
+            <ImageLoader
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+          />
+        </Tile>
+        </Column>
+      </Row>
+  </Grid>

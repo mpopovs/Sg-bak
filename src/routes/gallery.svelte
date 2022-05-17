@@ -33,7 +33,7 @@ onMount(async () => {
         <Row>
     {#each $artWorks as artWork}
    
-          <Column sm={1} md={4} lg={8}>
+          <Column sm={8} md={8} lg={8}>
 
     
 <ImageLoader
@@ -81,7 +81,7 @@ src="{artWork.thumbnails.images[0].url}"
   <Row>
     <Column></Column>
     <Column>
-      <PaginationNav />
+      <PaginationNav total={3} loop/>
     </Column>
     <Column></Column>
     

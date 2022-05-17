@@ -1,15 +1,53 @@
-<h1>Contacts</h1>
 
 
-<form action="/contact" method="post">
-<label for="">
-    Name:
-<input type="text" name="Name">
-</label>
-<label for="">
-    Email:
-<input type="text" name="email">
-</label>
-<input type="submit">
-</form>
 
+<script>
+    import {
+        Grid,
+        Row,
+        Column,
+      FluidForm,
+      TextInput,
+      TextArea,
+      FormGroup,
+      Button,
+     Content
+    } from "carbon-components-svelte";
+  </script>
+  <Content>
+    <h1>Contacts</h1>
+  </Content>
+  <Grid padding><Row>
+    <Column>
+    <TextInput labelText="First Name" placeholder="First Name..." required />
+</Column>
+    <Column>
+    <TextInput labelText="Last Name" placeholder="Last Name..." required />
+</Column>
+</Row>
+<Row>
+    <Column>
+    <TextInput labelText="Email" placeholder="your@mail.com" required />
+</Column>
+<Column>
+    <TextInput labelText="Phone" placeholder="Phone number" required />
+</Column>
+</Row>
+<Row>
+    <Column>
+        <TextInput labelText="Addres" placeholder="Adress " required />
+    </Column>
+</Row>
+
+  <Row>
+      <Column>
+        <TextArea labelText="Message" placeholder="Type your message here..." />
+    </Column>
+  </Row>
+<Row>
+    <Column>
+    <Button>Send</Button>
+    </Column>
+</Row>
+
+</Grid>
