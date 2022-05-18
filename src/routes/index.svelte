@@ -37,24 +37,26 @@ onMount(async () => {
             <Column 
             noGutter='true'
             >
-          <Content><h1>Find Artworks</h1></Content>
-          
+          <Content><h1>Find Artworks</h1>
+        
         <SearchArt/>
-       
+      </Content>
         </Column>
                     
     </Row>
  
 <Row>
-  <Column>
+  <Column></Column>
+  <Column sm={8} md={4} lg={6} >
     <Content>
       <div class="sfera">
  <ImageLoader
- src='https://cdn.glitch.global/89f42e75-f6d4-4696-9efe-aa8d1cdb61e8/lodes_atspulgs.7.png?v=1652865501902'
+ src='https://cdn.glitch.global/89f42e75-f6d4-4696-9efe-aa8d1cdb61e8/lodes_atspulgs.png?v=1652902277698'
  />
 </div>
 </Content>
   </Column>
+  <Column></Column>
 </Row>
 </Grid>
   

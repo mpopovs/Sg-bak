@@ -19,7 +19,7 @@ Tile,
      
       
     } from "carbon-components-svelte";
-
+    import Icon from '@iconify/svelte';
 
     let isSideNavOpen = false;
     let theme = "g90";
@@ -39,14 +39,15 @@ Tile,
         render="toggle"
         toggle={{
         themes: ["g90", "g10"],
-        labelA: 'Dark',
-        labelB: 'Light',
+        labelA: ' ',
+        labelB: ' ',
         
         
       }}
     />
-    </div>
-  
+    
+    
+  </div>
   </Header>
 
   <SideNav 
@@ -94,10 +95,12 @@ Tile,
      .toogle{
        position: fixed;
        top:0 px;
-       right: 45px;
+       right: 18px;
       
        padding-bottom: 15px;
      }
+    
+    
      :global(.bx--side-nav~.bx--content){margin-left: 0rem;
     padding: 1rem;
     }
