@@ -18,7 +18,7 @@
            <Column 
            noGutter='true'
            >
-  <section class="serach">
+  <section class="search">
 
 
       <Search bind:value={searched}
@@ -36,18 +36,14 @@
        </Row>
    </Grid>
   <style>
-      .button{
-          float: right;
-          
-      }
-      @media screen and (max-width: 1056px){
+   
 .search{
     position: relative;
 }
 .button{
 position: absolute;
-top: 182px;
-right: 3px;  
+top: 3px;
+right: 5px;  
       }
-    }
+    
   </style>
