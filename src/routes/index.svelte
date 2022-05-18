@@ -44,45 +44,27 @@ onMount(async () => {
         </Column>
                     
     </Row>
-    </Grid>
- <!---->
- <main>
-       
-        
-  <div class="">
-    <Grid 
-    noGutter='true'
-    >
-      <Row
-      noGutter='true'
-      >
-  {#each $artWorks as artWork}
  
-        <Column 
-        noGutter='true'
-        sm={1} md={2} lg={4}>
-
-  <ImageLoader
-     src="{artWork.thumbnails.images[0].url}"
-     />
-        </Column>
-        <Column>
-     <Tile>
-      <h3> {artWork.name}</h3>
-     </Tile>
-     <ImageLoader
-     src="{artWork.thumbnails.images[0].url}"
-     />
-    
- </Column>
-
-   
-  {/each}
+<Row>
+  <Column>
+    <Content>
+      <div class="sfera">
+ <ImageLoader
+ src='https://cdn.glitch.global/89f42e75-f6d4-4696-9efe-aa8d1cdb61e8/lodes_atspulgs.7.png?v=1652865501902'
+ />
+</div>
+</Content>
+  </Column>
 </Row>
-
 </Grid>
-  </div>
   
-</main>
+<style>
+  .sfera{
+    padding-top: 2rem;
+    margin: 2rem;
+  }
+</style>
+  
+
 
 
