@@ -37,8 +37,9 @@ onMount(async () => {
             <Column 
             noGutter='true'
             >
-          <Content><h1>Find Artworks</h1>
-        
+          <Content><h1>Contemporary art digital library with augmented reallity</h1>
+          </Content>
+          <Content>
         <SearchArt/>
       </Content>
         </Column>

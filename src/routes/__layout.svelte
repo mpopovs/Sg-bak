@@ -41,7 +41,8 @@ Tile,
         themes: ["g90", "g10"],
         labelA: ' ',
         labelB: ' ',
-        
+        hideLabel: true,
+    size: "sm",
         
       }}
     />

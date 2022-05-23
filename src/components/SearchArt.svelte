@@ -36,14 +36,17 @@
        </Row>
    </Grid>
   <style>
-   
+   :global(
+       .bx--search-input{border-bottom: none;}
+        .bx--btn{}
+)
 .search{
     position: relative;
 }
 .button{
 position: absolute;
-top: 3px;
-right: 5px;  
+top: 4px;
+right: 4px;  
       }
     
   </style>

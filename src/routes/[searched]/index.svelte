@@ -144,7 +144,7 @@ Content} from "carbon-components-svelte";
   
         
         .popup {
-          margin: 20px auto;
+          margin: 0px auto;
           padding: 10px;
           background: #fff;
           border-radius: 0px;
@@ -191,6 +191,8 @@ Content} from "carbon-components-svelte";
             width: 100%;
             height: 100%;
           }
+
+          
         }
         
             </style>
