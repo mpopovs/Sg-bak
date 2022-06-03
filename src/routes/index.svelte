@@ -13,6 +13,7 @@
 import { onMount } from "svelte";
 import {apiData, artWorks} from "../store";
 import SearchArt from '../components/SearchArt.svelte';
+import { src_url_equal } from "svelte/internal";
 
 onMount(async () => {
       fetch("https://api.sketchfab.com/v3/models?user=sferagallery")
@@ -26,6 +27,8 @@ onMount(async () => {
       });
     });
    
+   
+ 
 </script>
 
 
@@ -37,30 +40,48 @@ onMount(async () => {
             <Column 
             noGutter='true'
             >
-          <Content><h1>Contemporary art digital library with augmented reallity</h1>
+            <Content></Content>
+            <Content>
+              <SearchArt/>
+            </Content>
+          <Content><h1>Contemporary ceramic digital library with augmented reallity</h1>
           </Content>
-          <Content>
-        <SearchArt/>
-      </Content>
+         
         </Column>
                     
     </Row>
  
 <Row>
-  <Column></Column>
-  <Column sm={8} md={4} lg={6} >
+  
+  <Column  >
+    <!--
     <Content>
-      <div class="sfera">
- <ImageLoader
- src='https://cdn.glitch.global/89f42e75-f6d4-4696-9efe-aa8d1cdb61e8/lodes_atspulgs.png?v=1652902277698'
- />
-</div>
+    
+      {#each $artWorks as artWork}
+      
+      {#each artWork.tags as tagName }
+        <Tag >{tagName.name}</Tag>
+      {/each}
+       {/each}
+
+
 </Content>
-  </Column>
-  <Column></Column>
+-->
+<Content>
+<ImageLoader src='https://cdn.glitch.global/89f42e75-f6d4-4696-9efe-aa8d1cdb61e8/one_eyed_listeners.png?v=1653503087622'/>
+</Content> 
+</Column>
+  
 </Row>
 </Grid>
-  
+
+
+
+
+
+ <div class="sfera">
+ 
+ </div>
 <style>
   .sfera{
     padding-top: 2rem;

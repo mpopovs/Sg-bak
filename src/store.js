@@ -15,7 +15,7 @@ export const artWorks = derived(apiData, ($apiData) => {
   // @ts-ignore
   if ($apiData.results){
     // @ts-ignore
-    return $apiData.results.map(({ id,name,thumbnails,description,uid,viewerUrl}) => ({ id, name, thumbnails, description, uid, viewerUrl }));
+    return $apiData.results.map(({ id,name,thumbnails,description,uid,viewerUrl, tags }) => ({ id, name, thumbnails, description, uid, viewerUrl, tags }));
   }
 	
   return [];
