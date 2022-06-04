@@ -33,6 +33,7 @@ onMount(async () => {
 
 
     <Grid
+   
     noGutter='true'
     >
         
@@ -53,7 +54,7 @@ onMount(async () => {
  
 <Row>
   
-  <Column  >
+  <Column >
     <!--
     <Content>
     
