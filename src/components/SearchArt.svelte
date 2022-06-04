@@ -1,8 +1,6 @@
 <script>
     import {goto} from "$app/navigation";
     import Keydown from "svelte-keydown";
-    import { onMount } from "svelte";
-import {apiData, artWorks} from "../store";
     import { Search, Button, Grid,
       Row,
       Column, Tag, Content} from "carbon-components-svelte";
