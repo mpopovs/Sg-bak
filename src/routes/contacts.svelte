@@ -13,11 +13,13 @@
       Button,
      Content
     } from "carbon-components-svelte";
+ 
+   import Icon from '@iconify/svelte';
   </script>
   <Content>
     <h1>Contacts</h1>
   </Content>
-  <Grid padding
+ <!-- <Grid padding
   >
   <Row
   >
@@ -56,7 +58,24 @@
 </Row>
 
 </Grid>
+-->
+<Content>
+<Grid>
+  <Row>
+    <Column>
+     <div class="center">
+
+     <a href="https://www.facebook.com/sferagallery" target="_blank" class="cursor-pointer"><Icon icon="fa-brands:facebook" width="120" height="120" /></a>
+    </div>
+    </Column>
+  </Row>
+</Grid>
+
+</Content>
+
 
 <style>
-  
+  .center{
+    align-items: center;
+  }
 </style>
